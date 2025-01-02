@@ -10,26 +10,19 @@ using System.Windows.Forms;
 
 namespace MyMess
 {
-    public partial class Form1 : Form
+    public partial class Form2 : Form
     {
-        public Form1()
+        public Form2()
         {
             InitializeComponent();
-            
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void label7_Click(object sender, EventArgs e)
         {
-            // Create an instance of Form2
-            Form2 form2 = new Form2();
+            Form1 form1 = new Form1();
 
             // Show Form2
-            form2.Show();
+            form1.Show();
             //hide form 1
             this.Hide();
         }
