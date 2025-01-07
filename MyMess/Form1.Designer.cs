@@ -99,6 +99,7 @@
             this.regBtn.TabIndex = 9;
             this.regBtn.Text = "Register Now";
             this.regBtn.UseVisualStyleBackColor = false;
+            this.regBtn.Click += new System.EventHandler(this.regBtn_Click);
             // 
             // label5
             // 
