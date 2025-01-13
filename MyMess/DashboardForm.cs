@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MyMess
 {
-    public partial class Form4 : Form
+    public partial class DashboardForm : Form
     {
-        public Form4()
+        public DashboardForm()
         {
             InitializeComponent();
         }
@@ -23,6 +23,16 @@ namespace MyMess
         }
 
         private void Form4_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label25_Click(object sender, EventArgs e)
         {
 
         }

@@ -10,27 +10,40 @@ using System.Windows.Forms;
 
 namespace MyMess
 {
-    public partial class Form3 : Form
+    public partial class RegForm : Form
     {
-        public Form3()
+        public RegForm()
         {
             InitializeComponent();
+            
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            // Create an instance of Form2
+            LoginForm form2 = new LoginForm();
+
+            // Show Form2
+            form2.Show();
+            //hide form 1
+            this.Hide();
         }
 
         private void regBtn_Click(object sender, EventArgs e)
         {
             // Create an instance of Form2
-            Form4 form4 = new Form4();
+            CreateMessForm form3 = new CreateMessForm();
 
             // Show Form2
-            form4.Show();
+            form3.Show();
             //hide form 1
             this.Hide();
+
         }
     }
 }
