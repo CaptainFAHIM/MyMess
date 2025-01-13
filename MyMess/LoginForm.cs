@@ -70,12 +70,19 @@ namespace MyMess
                     {
                         string role = result.ToString().Trim();
 
+                        query = "SELECT Name FROM users WHERE Email = @Email AND Password = @Password";
+                        command = new SqlCommand(query, connection);
+                        command.Parameters.AddWithValue("@Email", email);
+                        command.Parameters.AddWithValue("@Password", pass);
+
+                        string name = command.ExecuteScalar()?.ToString();
+
 
                         if (role.Equals("Manager") || role.Equals("Member"))
                         {
                             // Role is either Manager or Member, show DashboardForm
                             MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            DashboardForm dashboardForm = new DashboardForm();
+                            DashboardForm dashboardForm = new DashboardForm(name);
                             dashboardForm.Show();
                             this.Hide();
                         }

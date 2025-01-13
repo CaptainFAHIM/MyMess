@@ -12,9 +12,16 @@ namespace MyMess
 {
     public partial class DashboardForm : Form
     {
+        private string _uname;
         public DashboardForm()
         {
             InitializeComponent();
+        }
+
+        public DashboardForm(string uname)
+        {
+            InitializeComponent();
+            _uname = uname;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -24,7 +31,7 @@ namespace MyMess
 
         private void Form4_Load(object sender, EventArgs e)
         {
-
+            profileName.Text = _uname;
         }
 
         private void label2_Click(object sender, EventArgs e)

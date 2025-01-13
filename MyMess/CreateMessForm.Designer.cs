@@ -36,7 +36,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.messName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -50,7 +50,7 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.messName);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(216, 66);
             this.panel1.Name = "panel1";
@@ -123,15 +123,15 @@
             this.textBox3.Size = new System.Drawing.Size(298, 40);
             this.textBox3.TabIndex = 3;
             // 
-            // textBox2
+            // messName
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(27, 128);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(298, 40);
-            this.textBox2.TabIndex = 2;
+            this.messName.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.messName.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.messName.Location = new System.Drawing.Point(27, 128);
+            this.messName.Multiline = true;
+            this.messName.Name = "messName";
+            this.messName.Size = new System.Drawing.Size(298, 40);
+            this.messName.TabIndex = 2;
             // 
             // label1
             // 
@@ -144,7 +144,7 @@
             this.label1.Text = "Create Your Mess";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // Form3
+            // CreateMessForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -153,7 +153,7 @@
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimizeBox = false;
-            this.Name = "Form3";
+            this.Name = "CreateMessForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MyMess";
             this.panel1.ResumeLayout(false);
@@ -169,7 +169,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox messName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label6;

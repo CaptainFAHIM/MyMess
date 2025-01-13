@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardForm));
-            this.label1 = new System.Windows.Forms.Label();
+            this.profileName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -86,15 +86,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // profileName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Elephant", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1012, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 31);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Name";
+            this.profileName.AutoSize = true;
+            this.profileName.Font = new System.Drawing.Font("Elephant", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profileName.Location = new System.Drawing.Point(1012, 15);
+            this.profileName.Name = "profileName";
+            this.profileName.Size = new System.Drawing.Size(90, 31);
+            this.profileName.TabIndex = 3;
+            this.profileName.Text = "Name";
             // 
             // label2
             // 
@@ -611,7 +611,7 @@
             this.button1.Text = "Set bazar date";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // HomeForm
+            // DashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -665,13 +665,13 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.profileName);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "HomeForm";
+            this.Name = "DashboardForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MyMess";
             this.Load += new System.EventHandler(this.Form4_Load);
@@ -688,7 +688,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label profileName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
