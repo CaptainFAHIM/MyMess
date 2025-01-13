@@ -30,17 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegForm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.loginBtn = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.regBtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.passCheckBox = new System.Windows.Forms.TextBox();
+            this.passBox = new System.Windows.Forms.TextBox();
+            this.emailBox = new System.Windows.Forms.TextBox();
+            this.nameBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -48,35 +48,35 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.loginBtn);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.regBtn);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.passCheckBox);
+            this.panel1.Controls.Add(this.passBox);
+            this.panel1.Controls.Add(this.emailBox);
+            this.panel1.Controls.Add(this.nameBox);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(225, 31);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(352, 501);
             this.panel1.TabIndex = 0;
             // 
-            // label7
+            // loginBtn
             // 
-            this.label7.AutoSize = true;
-            this.label7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(149)))), ((int)(((byte)(120)))));
-            this.label7.Location = new System.Drawing.Point(183, 442);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 16);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Login Now";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+            this.loginBtn.AutoSize = true;
+            this.loginBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.loginBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(149)))), ((int)(((byte)(120)))));
+            this.loginBtn.Location = new System.Drawing.Point(183, 442);
+            this.loginBtn.Name = "loginBtn";
+            this.loginBtn.Size = new System.Drawing.Size(70, 16);
+            this.loginBtn.TabIndex = 11;
+            this.loginBtn.Text = "Login Now";
+            this.loginBtn.Click += new System.EventHandler(this.label7_Click);
             // 
             // label6
             // 
@@ -141,47 +141,47 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Name";
             // 
-            // textBox4
+            // passCheckBox
             // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(27, 308);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.PasswordChar = '*';
-            this.textBox4.Size = new System.Drawing.Size(298, 40);
-            this.textBox4.TabIndex = 4;
+            this.passCheckBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.passCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passCheckBox.Location = new System.Drawing.Point(27, 308);
+            this.passCheckBox.Multiline = true;
+            this.passCheckBox.Name = "passCheckBox";
+            this.passCheckBox.PasswordChar = '*';
+            this.passCheckBox.Size = new System.Drawing.Size(298, 40);
+            this.passCheckBox.TabIndex = 4;
             // 
-            // textBox3
+            // passBox
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(27, 237);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PasswordChar = '*';
-            this.textBox3.Size = new System.Drawing.Size(298, 40);
-            this.textBox3.TabIndex = 3;
+            this.passBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.passBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passBox.Location = new System.Drawing.Point(27, 237);
+            this.passBox.Multiline = true;
+            this.passBox.Name = "passBox";
+            this.passBox.PasswordChar = '*';
+            this.passBox.Size = new System.Drawing.Size(298, 40);
+            this.passBox.TabIndex = 3;
             // 
-            // textBox2
+            // emailBox
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(27, 169);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(298, 40);
-            this.textBox2.TabIndex = 2;
+            this.emailBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.emailBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailBox.Location = new System.Drawing.Point(27, 169);
+            this.emailBox.Multiline = true;
+            this.emailBox.Name = "emailBox";
+            this.emailBox.Size = new System.Drawing.Size(298, 40);
+            this.emailBox.TabIndex = 2;
             // 
-            // textBox1
+            // nameBox
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(27, 101);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(298, 40);
-            this.textBox1.TabIndex = 1;
+            this.nameBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.nameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameBox.Location = new System.Drawing.Point(27, 101);
+            this.nameBox.Multiline = true;
+            this.nameBox.Name = "nameBox";
+            this.nameBox.Size = new System.Drawing.Size(298, 40);
+            this.nameBox.TabIndex = 1;
             // 
             // label1
             // 
@@ -193,7 +193,7 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Registration";
             // 
-            // Form1
+            // RegForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -202,7 +202,7 @@
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "RegForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MyMess";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -216,16 +216,16 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox nameBox;
+        private System.Windows.Forms.TextBox emailBox;
+        private System.Windows.Forms.TextBox passCheckBox;
+        private System.Windows.Forms.TextBox passBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button regBtn;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label loginBtn;
         private System.Windows.Forms.Label label6;
     }
 }
