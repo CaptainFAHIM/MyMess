@@ -48,11 +48,9 @@ namespace MyMess
                 return;
             }
 
-
-
             try
             {
-                string query = "SELECT Role FROM users WHERE Email = @Email AND Password = @Password";
+                string query = "SELECT Role, Name, JoinedMess FROM users WHERE Email = @Email AND Password = @Password";
 
                 using (SqlConnection connection = _dbConnection.GetConnection())
                 {
@@ -62,42 +60,37 @@ namespace MyMess
                     command.Parameters.AddWithValue("@Email", email);
                     command.Parameters.AddWithValue("@Password", pass);
 
-                    // Execute the query and get the role
+                    // Execute the query and get the data
                     connection.Open();
-                    object result = command.ExecuteScalar();
-
-                    if (result != null)
+                    using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        string role = result.ToString().Trim();
-
-                        query = "SELECT Name FROM users WHERE Email = @Email AND Password = @Password";
-                        command = new SqlCommand(query, connection);
-                        command.Parameters.AddWithValue("@Email", email);
-                        command.Parameters.AddWithValue("@Password", pass);
-
-                        string name = command.ExecuteScalar()?.ToString();
-
-
-                        if (role.Equals("Manager") || role.Equals("Member"))
+                        if (reader.Read())
                         {
-                            // Role is either Manager or Member, show DashboardForm
-                            MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            DashboardForm dashboardForm = new DashboardForm(name);
-                            dashboardForm.Show();
-                            this.Hide();
+                            string role = reader["Role"].ToString().Trim();
+                            string name = reader["Name"].ToString();
+                            string joinedMess = reader["JoinedMess"]?.ToString();
+
+                            if (role.Equals("Manager") || role.Equals("Member"))
+                            {
+                                // Role is either Manager or Member, show DashboardForm
+                                MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                DashboardForm dashboardForm = new DashboardForm(name, joinedMess);
+                                dashboardForm.Show();
+                                this.Hide();
+                            }
+                            else if (string.IsNullOrEmpty(role))
+                            {
+                                // Role is null (empty), show CreateMessForm
+                                MessageBox.Show("Login successful, Create a mess or join a mess!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                CreateMessForm createMessForm = new CreateMessForm(email);
+                                createMessForm.Show();
+                                this.Hide();
+                            }
                         }
-                        else if (role == "")
+                        else
                         {
-                            // Role is null (empty), show CreateMessForm
-                            MessageBox.Show("Login successful, Create a mess or join a mess!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            CreateMessForm createMessForm = new CreateMessForm();
-                            createMessForm.Show();
-                            this.Hide();
+                            MessageBox.Show("Invalid email or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Invalid email or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -105,10 +98,7 @@ namespace MyMess
             {
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
-
-
         }
+
     }
 }

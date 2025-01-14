@@ -13,15 +13,17 @@ namespace MyMess
     public partial class DashboardForm : Form
     {
         private string _uname;
+        private string _messName;
         public DashboardForm()
         {
             InitializeComponent();
         }
 
-        public DashboardForm(string uname)
+        public DashboardForm(string uname, string messName)
         {
             InitializeComponent();
             _uname = uname;
+            _messName = messName.Split('_')[0];
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -31,6 +33,7 @@ namespace MyMess
 
         private void Form4_Load(object sender, EventArgs e)
         {
+            messName.Text = _messName;
             profileName.Text = _uname;
         }
 

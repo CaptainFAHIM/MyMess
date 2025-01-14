@@ -82,17 +82,31 @@ namespace MyMess
 
                     // Execute
                     connection.Open();
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Rigistered successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    int rowsEffected = command.ExecuteNonQuery();
 
-                    // Navigate to Form3
-                    // Create an instance of Form2
-                    CreateMessForm createMessForm = new CreateMessForm();
+                    if (rowsEffected>0) {
 
-                    // Show Form2
-                    createMessForm.Show();
-                    //hide form 1
-                    this.Hide();
+                        MessageBox.Show("Rigistered successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        query = "SELECT Email FROM users WHERE Email = @Email AND Password = @Password";
+                        command = new SqlCommand(query, connection);
+                        command.Parameters.AddWithValue("@Email", email);
+                        command.Parameters.AddWithValue("@Password", pass);
+
+                        string mail = command.ExecuteScalar()?.ToString();
+
+                        // Navigate to Form3
+                        // Create an instance of Form2
+                        CreateMessForm createMessForm = new CreateMessForm(mail);
+
+                        // Show Form2
+                        createMessForm.Show();
+                        //hide form 1
+                        this.Hide();
+
+
+                    }
+                    
                 }
             }
 

@@ -81,6 +81,7 @@
             this.label47 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.messName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -611,12 +612,23 @@
             this.button1.Text = "Set bazar date";
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // messName
+            // 
+            this.messName.AutoSize = true;
+            this.messName.Font = new System.Drawing.Font("Elephant", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.messName.Location = new System.Drawing.Point(73, 15);
+            this.messName.Name = "messName";
+            this.messName.Size = new System.Drawing.Size(164, 31);
+            this.messName.TabIndex = 53;
+            this.messName.Text = "Mess Name";
+            // 
             // DashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.Controls.Add(this.messName);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label48);
             this.Controls.Add(this.label47);
@@ -737,5 +749,6 @@
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label messName;
     }
 }
