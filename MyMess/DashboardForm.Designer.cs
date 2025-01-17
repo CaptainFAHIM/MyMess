@@ -82,6 +82,9 @@
             this.label48 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.messName = new System.Windows.Forms.Label();
+            this.activeMonthLabel = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dayCount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -171,6 +174,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label6.Font = new System.Drawing.Font("Elephant", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(149)))), ((int)(((byte)(120)))));
             this.label6.Location = new System.Drawing.Point(12, 202);
@@ -178,6 +182,7 @@
             this.label6.Size = new System.Drawing.Size(151, 25);
             this.label6.TabIndex = 9;
             this.label6.Text = "Add Deposite";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -624,12 +629,45 @@
             this.messName.TabIndex = 53;
             this.messName.Text = "Mess Name";
             // 
+            // activeMonthLabel
+            // 
+            this.activeMonthLabel.AutoSize = true;
+            this.activeMonthLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.activeMonthLabel.Location = new System.Drawing.Point(242, 60);
+            this.activeMonthLabel.Name = "activeMonthLabel";
+            this.activeMonthLabel.Size = new System.Drawing.Size(82, 18);
+            this.activeMonthLabel.TabIndex = 54;
+            this.activeMonthLabel.Text = "December";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(330, 60);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(40, 18);
+            this.label5.TabIndex = 55;
+            this.label5.Text = "Day:";
+            // 
+            // dayCount
+            // 
+            this.dayCount.AutoSize = true;
+            this.dayCount.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dayCount.Location = new System.Drawing.Point(367, 60);
+            this.dayCount.Name = "dayCount";
+            this.dayCount.Size = new System.Drawing.Size(26, 18);
+            this.dayCount.TabIndex = 56;
+            this.dayCount.Text = "30";
+            // 
             // DashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.Controls.Add(this.dayCount);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.activeMonthLabel);
             this.Controls.Add(this.messName);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label48);
@@ -752,5 +790,8 @@
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label messName;
+        private System.Windows.Forms.Label activeMonthLabel;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label dayCount;
     }
 }

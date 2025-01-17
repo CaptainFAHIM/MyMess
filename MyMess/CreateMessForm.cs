@@ -48,33 +48,39 @@ namespace MyMess
             string sanitizedEmail = _mailForMess.Replace("@", "_").Replace(".", "_");
             string tableName = messName.Text + "_" + sanitizedEmail;
 
+            // Fetch the active month value
+            string actvMnth = activeMonth.Text;
+
             // SQL query to create the table
             string createTableQuery = $@"
-    CREATE TABLE {tableName} (
-        Members NVARCHAR(50),
-        TotalDeposite DECIMAL(18, 2),
-        TotalMeal INT,
-        TotalCost DECIMAL(18, 2),
-        Balance DECIMAL(18, 2)
-    )";
+CREATE TABLE {tableName} (
+    ActiveMonth NVARCHAR(50),
+    StartDate DATETIME,
+    Members NVARCHAR(50),
+    TotalDeposites DECIMAL(18, 2) DEFAULT 0,
+    TotalMeals INT DEFAULT 0,
+    TotalCosts DECIMAL(18, 2) DEFAULT 0,
+    Balance DECIMAL(18, 2) DEFAULT 0
+    
+)";
 
-            // SQL query to insert the email into the Members column
-            string insertEmailQuery = $@"
-    INSERT INTO {tableName} (Members) 
-    VALUES (@Email)";
+            // SQL query to insert both the email and the active month in the same row
+            string insertEmailAndMonthQuery = $@"
+INSERT INTO {tableName} (Members, ActiveMonth, StartDate) 
+VALUES (@Email, @ActiveMonth, @StartDate)";
 
             // SQL query to update the Role and JoinedMess columns in the users table
             string updateUserQuery = $@"
-    UPDATE users 
-    SET Role = 'Manager', 
-        JoinedMess = @TableName 
-    WHERE email = @Email";
+UPDATE users 
+SET Role = 'Manager', 
+    JoinedMess = @TableName 
+WHERE email = @Email";
 
             // SQL query to fetch Name and JoinedMess for the email
             string fetchUserQuery = $@"
-    SELECT Name, JoinedMess 
-    FROM users 
-    WHERE email = @Email";
+SELECT Name, JoinedMess 
+FROM users 
+WHERE email = @Email";
 
             try
             {
@@ -88,10 +94,13 @@ namespace MyMess
                         createCommand.ExecuteNonQuery();
                     }
 
-                    // Insert the email into the Members column
-                    using (SqlCommand insertCommand = new SqlCommand(insertEmailQuery, connection))
+                    // Insert both the email and active month into the same row
+                    using (SqlCommand insertCommand = new SqlCommand(insertEmailAndMonthQuery, connection))
                     {
+                        DateTime currentDate = DateTime.Now;
                         insertCommand.Parameters.AddWithValue("@Email", _mailForMess);
+                        insertCommand.Parameters.AddWithValue("@ActiveMonth", actvMnth);
+                        insertCommand.Parameters.AddWithValue("@StartDate", currentDate);
                         insertCommand.ExecuteNonQuery();
                     }
 
@@ -132,9 +141,9 @@ namespace MyMess
             }
         }
 
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
 
-
-
-
+        }
     }
 }

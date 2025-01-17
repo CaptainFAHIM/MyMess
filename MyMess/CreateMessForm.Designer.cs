@@ -35,7 +35,7 @@
             this.regBtn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.activeMonth = new System.Windows.Forms.TextBox();
             this.messName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -49,7 +49,7 @@
             this.panel1.Controls.Add(this.regBtn);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.activeMonth);
             this.panel1.Controls.Add(this.messName);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(216, 66);
@@ -112,16 +112,17 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Mess Name";
             // 
-            // textBox3
+            // activeMonth
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(27, 196);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PasswordChar = '*';
-            this.textBox3.Size = new System.Drawing.Size(298, 40);
-            this.textBox3.TabIndex = 3;
+            this.activeMonth.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.activeMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.activeMonth.Location = new System.Drawing.Point(27, 196);
+            this.activeMonth.Multiline = true;
+            this.activeMonth.Name = "activeMonth";
+            this.activeMonth.PasswordChar = '*';
+            this.activeMonth.Size = new System.Drawing.Size(298, 40);
+            this.activeMonth.TabIndex = 3;
+            this.activeMonth.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // messName
             // 
@@ -168,7 +169,7 @@
         private System.Windows.Forms.Button regBtn;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox activeMonth;
         private System.Windows.Forms.TextBox messName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
