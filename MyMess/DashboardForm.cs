@@ -104,22 +104,43 @@ namespace MyMess
                 MessageBox.Show("You do not have permission to add a member.");
                 return;
             }
-            else {
+
                 // Navigate to AddMemberForm
                 AddMemberForm addMemberForm = new AddMemberForm(_umail, _messName);
                 addMemberForm.StartPosition = FormStartPosition.CenterParent;
                 addMemberForm.ShowDialog(); // This makes it a modal dialog
-            }
+            
             
         }
 
         private void label6_Click(object sender, EventArgs e)
         {
 
-            // Navigate to AddMemberForm
+            string role = RoleChecker.GetUserRole(_umail, _dbConnection);
+            if (!role.Equals("Manager"))
+            {
+                MessageBox.Show("You do not have permission to deposite.");
+                return;
+            }
+            // Navigate
             DepositeForm depositeForm = new DepositeForm(_umail, _messName);
             depositeForm.StartPosition = FormStartPosition.CenterParent;
             depositeForm.ShowDialog(); // This makes it a modal dialog
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            string role = RoleChecker.GetUserRole(_umail, _dbConnection);
+            if (!role.Equals("Manager"))
+            {
+                MessageBox.Show("You do not have permission to add meal.");
+                return;
+            }
+            // Navigate
+            MealForm mealForm = new MealForm(_messName);
+            mealForm.StartPosition = FormStartPosition.CenterParent;
+            mealForm.ShowDialog(); // This makes it a modal dialog
 
         }
     }

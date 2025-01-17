@@ -59,6 +59,12 @@
     <Compile Include="DepositeForm.Designer.cs">
       <DependentUpon>DepositeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MealForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MealForm.Designer.cs">
+      <DependentUpon>MealForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DepositeForm.resx">
       <DependentUpon>DepositeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MealForm.resx">
+      <DependentUpon>MealForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegForm.resx">
       <DependentUpon>RegForm.cs</DependentUpon>

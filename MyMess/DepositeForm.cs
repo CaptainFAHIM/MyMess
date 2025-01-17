@@ -29,7 +29,7 @@ namespace MyMess
         {
             string depositAmountText = depositeAmmountTxt.Text;
 
-            // Check if deposit amount or selected user is null
+            // Validate the deposit amount and selected user
             if (string.IsNullOrEmpty(depositAmountText))
             {
                 MessageBox.Show("Please enter a valid amount.");
@@ -51,34 +51,60 @@ namespace MyMess
 
             string selectedMember = selectUserCombo.Text; // Get the selected member from the ComboBox
 
-            string query = $@"
+            // Query to update the mess table
+            string updateMessQuery = $@"
                 UPDATE [{_messName}]
                 SET TotalDeposites = TotalDeposites + @DepositAmount,
                     Balance = Balance + @DepositAmount
                 WHERE Members = @MemberName";
+
+            // Query to insert into Deposites table
+            string insertDepositQuery = @"
+                INSERT INTO Deposites (Name, Email, DepositeAmount, JoinedMess, DepositeDate)
+                SELECT Name, Email, @DepositAmount, @JoinedMess, GETDATE()
+                FROM Users
+                WHERE Email = @MemberEmail";
 
             try
             {
                 using (SqlConnection connection = _dbConnection.GetConnection())
                 {
                     connection.Open();
-                    using (SqlCommand command = new SqlCommand(query, connection))
+
+                    // Start a transaction
+                    using (SqlTransaction transaction = connection.BeginTransaction())
                     {
-                        // Add parameters
-                        command.Parameters.AddWithValue("@DepositAmount", depositAmount);
-                        command.Parameters.AddWithValue("@MemberName", selectedMember);
-
-                        // Execute query
-                        int rowsAffected = command.ExecuteNonQuery();
-
-                        if (rowsAffected > 0)
+                        try
                         {
+                            // Update the mess table
+                            using (SqlCommand updateCommand = new SqlCommand(updateMessQuery, connection, transaction))
+                            {
+                                updateCommand.Parameters.AddWithValue("@DepositAmount", depositAmount);
+                                updateCommand.Parameters.AddWithValue("@MemberName", selectedMember);
+
+                                updateCommand.ExecuteNonQuery();
+                            }
+
+                            // Insert into Deposites table
+                            using (SqlCommand insertCommand = new SqlCommand(insertDepositQuery, connection, transaction))
+                            {
+                                insertCommand.Parameters.AddWithValue("@DepositAmount", depositAmount);
+                                insertCommand.Parameters.AddWithValue("@JoinedMess", _messName);
+                                insertCommand.Parameters.AddWithValue("@MemberEmail", selectedMember);
+
+                                insertCommand.ExecuteNonQuery();
+                            }
+
+                            // Commit the transaction
+                            transaction.Commit();
+
                             MessageBox.Show("Deposit added successfully!");
                             depositeAmmountTxt.Clear(); // Clear the input field
                         }
-                        else
+                        catch
                         {
-                            MessageBox.Show("Failed to add the deposit. Please check the member selection.");
+                            transaction.Rollback();
+                            throw; // Re-throw the exception after rollback
                         }
                     }
                 }
