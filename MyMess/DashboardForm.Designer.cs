@@ -54,37 +54,30 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
+            this.messBalanceTxt = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
+            this.totalDepositeTxt = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
+            this.totalMealTxt = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
+            this.totalMealCostTxt = new System.Windows.Forms.Label();
+            this.totalCostTxt = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
+            this.myTotalMealTxt = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
+            this.myMealCostTxt = new System.Windows.Forms.Label();
+            this.myDepositeTxt = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.myBalanceTxt = new System.Windows.Forms.Label();
             this.messName = new System.Windows.Forms.Label();
             this.activeMonthLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dayCount = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -206,6 +199,7 @@
             this.label8.Size = new System.Drawing.Size(106, 25);
             this.label8.TabIndex = 11;
             this.label8.Text = "Add Cost";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label9
             // 
@@ -333,16 +327,16 @@
             this.label22.TabIndex = 25;
             this.label22.Text = "Mess balance:";
             // 
-            // label23
+            // messBalanceTxt
             // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.DimGray;
-            this.label23.Location = new System.Drawing.Point(366, 136);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(18, 20);
-            this.label23.TabIndex = 26;
-            this.label23.Text = "0";
+            this.messBalanceTxt.AutoSize = true;
+            this.messBalanceTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.messBalanceTxt.ForeColor = System.Drawing.Color.DimGray;
+            this.messBalanceTxt.Location = new System.Drawing.Point(366, 136);
+            this.messBalanceTxt.Name = "messBalanceTxt";
+            this.messBalanceTxt.Size = new System.Drawing.Size(18, 20);
+            this.messBalanceTxt.TabIndex = 26;
+            this.messBalanceTxt.Text = "0";
             // 
             // label24
             // 
@@ -355,17 +349,17 @@
             this.label24.TabIndex = 27;
             this.label24.Text = "Total deposite:";
             // 
-            // label25
+            // totalDepositeTxt
             // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.Color.DimGray;
-            this.label25.Location = new System.Drawing.Point(366, 168);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(18, 20);
-            this.label25.TabIndex = 28;
-            this.label25.Text = "0";
-            this.label25.Click += new System.EventHandler(this.label25_Click);
+            this.totalDepositeTxt.AutoSize = true;
+            this.totalDepositeTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalDepositeTxt.ForeColor = System.Drawing.Color.DimGray;
+            this.totalDepositeTxt.Location = new System.Drawing.Point(366, 168);
+            this.totalDepositeTxt.Name = "totalDepositeTxt";
+            this.totalDepositeTxt.Size = new System.Drawing.Size(18, 20);
+            this.totalDepositeTxt.TabIndex = 28;
+            this.totalDepositeTxt.Text = "0";
+            this.totalDepositeTxt.Click += new System.EventHandler(this.label25_Click);
             // 
             // label26
             // 
@@ -378,16 +372,16 @@
             this.label26.TabIndex = 29;
             this.label26.Text = "Total meal:";
             // 
-            // label27
+            // totalMealTxt
             // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.ForeColor = System.Drawing.Color.DimGray;
-            this.label27.Location = new System.Drawing.Point(366, 202);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(18, 20);
-            this.label27.TabIndex = 30;
-            this.label27.Text = "0";
+            this.totalMealTxt.AutoSize = true;
+            this.totalMealTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalMealTxt.ForeColor = System.Drawing.Color.DimGray;
+            this.totalMealTxt.Location = new System.Drawing.Point(366, 202);
+            this.totalMealTxt.Name = "totalMealTxt";
+            this.totalMealTxt.Size = new System.Drawing.Size(18, 20);
+            this.totalMealTxt.TabIndex = 30;
+            this.totalMealTxt.Text = "0";
             // 
             // label28
             // 
@@ -400,60 +394,27 @@
             this.label28.TabIndex = 31;
             this.label28.Text = "Total meal cost:";
             // 
-            // label29
+            // totalMealCostTxt
             // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.ForeColor = System.Drawing.Color.DimGray;
-            this.label29.Location = new System.Drawing.Point(366, 240);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(18, 20);
-            this.label29.TabIndex = 32;
-            this.label29.Text = "0";
+            this.totalMealCostTxt.AutoSize = true;
+            this.totalMealCostTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalMealCostTxt.ForeColor = System.Drawing.Color.DimGray;
+            this.totalMealCostTxt.Location = new System.Drawing.Point(366, 240);
+            this.totalMealCostTxt.Name = "totalMealCostTxt";
+            this.totalMealCostTxt.Size = new System.Drawing.Size(18, 20);
+            this.totalMealCostTxt.TabIndex = 32;
+            this.totalMealCostTxt.Text = "0";
             // 
-            // label30
+            // totalCostTxt
             // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.ForeColor = System.Drawing.Color.DimGray;
-            this.label30.Location = new System.Drawing.Point(238, 276);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(79, 20);
-            this.label30.TabIndex = 33;
-            this.label30.Text = "Meal rate:";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.ForeColor = System.Drawing.Color.DimGray;
-            this.label31.Location = new System.Drawing.Point(366, 276);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(18, 20);
-            this.label31.TabIndex = 34;
-            this.label31.Text = "0";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.ForeColor = System.Drawing.Color.DimGray;
-            this.label32.Location = new System.Drawing.Point(238, 312);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(123, 20);
-            this.label32.TabIndex = 35;
-            this.label32.Text = "Total other cost:";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.ForeColor = System.Drawing.Color.DimGray;
-            this.label33.Location = new System.Drawing.Point(366, 312);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(18, 20);
-            this.label33.TabIndex = 36;
-            this.label33.Text = "0";
+            this.totalCostTxt.AutoSize = true;
+            this.totalCostTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalCostTxt.ForeColor = System.Drawing.Color.DimGray;
+            this.totalCostTxt.Location = new System.Drawing.Point(366, 276);
+            this.totalCostTxt.Name = "totalCostTxt";
+            this.totalCostTxt.Size = new System.Drawing.Size(18, 20);
+            this.totalCostTxt.TabIndex = 36;
+            this.totalCostTxt.Text = "0";
             // 
             // label34
             // 
@@ -492,16 +453,16 @@
             this.label37.TabIndex = 40;
             this.label37.Text = "Total meal:";
             // 
-            // label38
+            // myTotalMealTxt
             // 
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.ForeColor = System.Drawing.Color.DimGray;
-            this.label38.Location = new System.Drawing.Point(788, 136);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(18, 20);
-            this.label38.TabIndex = 41;
-            this.label38.Text = "0";
+            this.myTotalMealTxt.AutoSize = true;
+            this.myTotalMealTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.myTotalMealTxt.ForeColor = System.Drawing.Color.DimGray;
+            this.myTotalMealTxt.Location = new System.Drawing.Point(788, 136);
+            this.myTotalMealTxt.Name = "myTotalMealTxt";
+            this.myTotalMealTxt.Size = new System.Drawing.Size(18, 20);
+            this.myTotalMealTxt.TabIndex = 41;
+            this.myTotalMealTxt.Text = "0";
             // 
             // label39
             // 
@@ -510,9 +471,9 @@
             this.label39.ForeColor = System.Drawing.Color.DimGray;
             this.label39.Location = new System.Drawing.Point(673, 168);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(113, 20);
+            this.label39.Size = new System.Drawing.Size(81, 20);
             this.label39.TabIndex = 42;
-            this.label39.Text = "Total deposite:";
+            this.label39.Text = "Meal cost:";
             // 
             // label40
             // 
@@ -521,31 +482,31 @@
             this.label40.ForeColor = System.Drawing.Color.DimGray;
             this.label40.Location = new System.Drawing.Point(673, 202);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(67, 20);
+            this.label40.Size = new System.Drawing.Size(113, 20);
             this.label40.TabIndex = 43;
-            this.label40.Text = "My cost:";
+            this.label40.Text = "Total deposite:";
             // 
-            // label41
+            // myMealCostTxt
             // 
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.ForeColor = System.Drawing.Color.DimGray;
-            this.label41.Location = new System.Drawing.Point(788, 168);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(18, 20);
-            this.label41.TabIndex = 44;
-            this.label41.Text = "0";
+            this.myMealCostTxt.AutoSize = true;
+            this.myMealCostTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.myMealCostTxt.ForeColor = System.Drawing.Color.DimGray;
+            this.myMealCostTxt.Location = new System.Drawing.Point(788, 168);
+            this.myMealCostTxt.Name = "myMealCostTxt";
+            this.myMealCostTxt.Size = new System.Drawing.Size(18, 20);
+            this.myMealCostTxt.TabIndex = 44;
+            this.myMealCostTxt.Text = "0";
             // 
-            // label42
+            // myDepositeTxt
             // 
-            this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.ForeColor = System.Drawing.Color.DimGray;
-            this.label42.Location = new System.Drawing.Point(788, 202);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(18, 20);
-            this.label42.TabIndex = 45;
-            this.label42.Text = "0";
+            this.myDepositeTxt.AutoSize = true;
+            this.myDepositeTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.myDepositeTxt.ForeColor = System.Drawing.Color.DimGray;
+            this.myDepositeTxt.Location = new System.Drawing.Point(788, 202);
+            this.myDepositeTxt.Name = "myDepositeTxt";
+            this.myDepositeTxt.Size = new System.Drawing.Size(18, 20);
+            this.myDepositeTxt.TabIndex = 45;
+            this.myDepositeTxt.Text = "0";
             // 
             // label43
             // 
@@ -558,67 +519,16 @@
             this.label43.TabIndex = 46;
             this.label43.Text = "My balance:";
             // 
-            // label44
+            // myBalanceTxt
             // 
-            this.label44.AutoSize = true;
-            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label44.ForeColor = System.Drawing.Color.DimGray;
-            this.label44.Location = new System.Drawing.Point(788, 240);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(18, 20);
-            this.label44.TabIndex = 47;
-            this.label44.Text = "0";
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Font = new System.Drawing.Font("Elephant", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label45.Location = new System.Drawing.Point(671, 324);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(197, 31);
-            this.label45.TabIndex = 48;
-            this.label45.Text = "My bazar date";
-            // 
-            // label46
-            // 
-            this.label46.BackColor = System.Drawing.Color.LightGray;
-            this.label46.Location = new System.Drawing.Point(646, 355);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(249, 1);
-            this.label46.TabIndex = 49;
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label47.ForeColor = System.Drawing.Color.DimGray;
-            this.label47.Location = new System.Drawing.Point(673, 371);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(48, 20);
-            this.label47.TabIndex = 50;
-            this.label47.Text = "Date:";
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label48.ForeColor = System.Drawing.Color.DimGray;
-            this.label48.Location = new System.Drawing.Point(727, 371);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(71, 20);
-            this.label48.TabIndex = 51;
-            this.label48.Text = "10/10/25";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(149)))), ((int)(((byte)(120)))));
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(649, 414);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(246, 76);
-            this.button1.TabIndex = 52;
-            this.button1.Text = "Set bazar date";
-            this.button1.UseVisualStyleBackColor = false;
+            this.myBalanceTxt.AutoSize = true;
+            this.myBalanceTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.myBalanceTxt.ForeColor = System.Drawing.Color.DimGray;
+            this.myBalanceTxt.Location = new System.Drawing.Point(788, 240);
+            this.myBalanceTxt.Name = "myBalanceTxt";
+            this.myBalanceTxt.Size = new System.Drawing.Size(18, 20);
+            this.myBalanceTxt.TabIndex = 47;
+            this.myBalanceTxt.Text = "0";
             // 
             // messName
             // 
@@ -660,6 +570,17 @@
             this.dayCount.TabIndex = 56;
             this.dayCount.Text = "30";
             // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.ForeColor = System.Drawing.Color.DimGray;
+            this.label32.Location = new System.Drawing.Point(242, 276);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(82, 20);
+            this.label32.TabIndex = 35;
+            this.label32.Text = "Total cost:";
+            // 
             // DashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -670,33 +591,26 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.activeMonthLabel);
             this.Controls.Add(this.messName);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label48);
-            this.Controls.Add(this.label47);
-            this.Controls.Add(this.label46);
-            this.Controls.Add(this.label45);
-            this.Controls.Add(this.label44);
+            this.Controls.Add(this.myBalanceTxt);
             this.Controls.Add(this.label43);
-            this.Controls.Add(this.label42);
-            this.Controls.Add(this.label41);
+            this.Controls.Add(this.myDepositeTxt);
+            this.Controls.Add(this.myMealCostTxt);
             this.Controls.Add(this.label40);
             this.Controls.Add(this.label39);
-            this.Controls.Add(this.label38);
+            this.Controls.Add(this.myTotalMealTxt);
             this.Controls.Add(this.label37);
             this.Controls.Add(this.label36);
             this.Controls.Add(this.label35);
             this.Controls.Add(this.label34);
-            this.Controls.Add(this.label33);
+            this.Controls.Add(this.totalCostTxt);
             this.Controls.Add(this.label32);
-            this.Controls.Add(this.label31);
-            this.Controls.Add(this.label30);
-            this.Controls.Add(this.label29);
+            this.Controls.Add(this.totalMealCostTxt);
             this.Controls.Add(this.label28);
-            this.Controls.Add(this.label27);
+            this.Controls.Add(this.totalMealTxt);
             this.Controls.Add(this.label26);
-            this.Controls.Add(this.label25);
+            this.Controls.Add(this.totalDepositeTxt);
             this.Controls.Add(this.label24);
-            this.Controls.Add(this.label23);
+            this.Controls.Add(this.messBalanceTxt);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label20);
@@ -763,36 +677,29 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label messBalanceTxt;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label totalDepositeTxt;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label totalMealTxt;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label totalMealCostTxt;
+        private System.Windows.Forms.Label totalCostTxt;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label myTotalMealTxt;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label myMealCostTxt;
+        private System.Windows.Forms.Label myDepositeTxt;
         private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.Label label46;
-        private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label myBalanceTxt;
         private System.Windows.Forms.Label messName;
         private System.Windows.Forms.Label activeMonthLabel;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label dayCount;
+        private System.Windows.Forms.Label label32;
     }
 }

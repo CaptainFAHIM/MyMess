@@ -52,6 +52,12 @@
     <Compile Include="AddMemberForm.Designer.cs">
       <DependentUpon>AddMemberForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CostsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CostsForm.Designer.cs">
+      <DependentUpon>CostsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DbConnection.cs" />
     <Compile Include="DepositeForm.cs">
       <SubType>Form</SubType>
@@ -94,6 +100,9 @@
     <Compile Include="RoleChecker.cs" />
     <EmbeddedResource Include="AddMemberForm.resx">
       <DependentUpon>AddMemberForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CostsForm.resx">
+      <DependentUpon>CostsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DepositeForm.resx">
       <DependentUpon>DepositeForm.cs</DependentUpon>

@@ -34,32 +34,76 @@ namespace MyMess
             messName.Text = _messName.Split('_')[0];
             profileName.Text = _uname;
 
-            // Fetch the active month and days passed from the database
             try
             {
                 using (SqlConnection connection = _dbConnection.GetConnection())
                 {
                     connection.Open();
 
-                    // Query to fetch the ActiveMonth
-                    string activeMonthQuery = $@"SELECT ActiveMonth FROM {_messName} WHERE ActiveMonth IS NOT NULL";
+                    // Fetch Mess Balance
+                    string messBalanceQuery = $@"SELECT SUM(Balance) FROM [{_messName}]";
+                    using (SqlCommand command = new SqlCommand(messBalanceQuery, connection))
+                    {
+                        object balanceResult = command.ExecuteScalar();
+                        messBalanceTxt.Text = balanceResult != null ? balanceResult.ToString() : "0";
+                    }
 
+                    // Fetch Total Deposit
+                    string totalDepositQuery = @"
+                SELECT ISNULL(SUM(DepositAmount), 0)
+                FROM Deposites
+                WHERE MessName = @MessName";
+                    using (SqlCommand command = new SqlCommand(totalDepositQuery, connection))
+                    {
+                        command.Parameters.AddWithValue("@MessName", _messName);
+                        object depositResult = command.ExecuteScalar();
+                        totalDepositeTxt.Text = depositResult != null ? depositResult.ToString() : "0";
+                    }
+
+                    // Fetch Total Meal
+                    string totalMealQuery = $@"
+                SELECT ISNULL(SUM(TotalMeals), 0)
+                FROM [{_messName}]";
+                    using (SqlCommand command = new SqlCommand(totalMealQuery, connection))
+                    {
+                        object mealResult = command.ExecuteScalar();
+                        totalMealTxt.Text = mealResult != null ? mealResult.ToString() : "0";
+                    }
+
+                    // Fetch Total Meal Cost
+                    string totalMealCostQuery = @"
+                SELECT ISNULL(SUM(MealCost), 0)
+                FROM Meals
+                WHERE MessName = @MessName";
+                    using (SqlCommand command = new SqlCommand(totalMealCostQuery, connection))
+                    {
+                        command.Parameters.AddWithValue("@MessName", _messName);
+                        object mealCostResult = command.ExecuteScalar();
+                        totalMealCostTxt.Text = mealCostResult != null ? mealCostResult.ToString() : "0";
+                    }
+
+                    // Fetch Total Cost
+                    string totalCostQuery = @"
+                SELECT ISNULL(SUM(CostAmount), 0)
+                FROM Costs
+                WHERE MessName = @MessName";
+                    using (SqlCommand command = new SqlCommand(totalCostQuery, connection))
+                    {
+                        command.Parameters.AddWithValue("@MessName", _messName);
+                        object costResult = command.ExecuteScalar();
+                        totalCostTxt.Text = costResult != null ? costResult.ToString() : "0";
+                    }
+
+                    // Fetch Active Month
+                    string activeMonthQuery = $@"SELECT ActiveMonth FROM [{_messName}] WHERE ActiveMonth IS NOT NULL";
                     using (SqlCommand command = new SqlCommand(activeMonthQuery, connection))
                     {
                         object result = command.ExecuteScalar();
-                        if (result != null)
-                        {
-                            activeMonthLabel.Text = result.ToString(); // Assuming you have a label named activeMonthLabel
-                        }
-                        else
-                        {
-                            activeMonthLabel.Text = "No active month found.";
-                        }
+                        activeMonthLabel.Text = result != null ? result.ToString() : "No active month found.";
                     }
 
-                    // Query to fetch the StartDate
-                    string startDateQuery = $@"SELECT StartDate FROM {_messName} WHERE StartDate IS NOT NULL";
-
+                    // Fetch Start Date and Calculate Days Passed
+                    string startDateQuery = $@"SELECT StartDate FROM [{_messName}] WHERE StartDate IS NOT NULL";
                     using (SqlCommand command = new SqlCommand(startDateQuery, connection))
                     {
                         object startDateResult = command.ExecuteScalar();
@@ -67,12 +111,7 @@ namespace MyMess
                         {
                             DateTime startDate = Convert.ToDateTime(startDateResult);
                             DateTime currentDate = DateTime.Now;
-
-                            // Calculate days passed
-                            TimeSpan difference = currentDate - startDate;
-                            int daysPassed = difference.Days;
-
-                            // Set the days passed in the dayCount label
+                            int daysPassed = (currentDate - startDate).Days;
                             dayCount.Text = daysPassed.ToString();
                         }
                         else
@@ -84,9 +123,10 @@ namespace MyMess
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred while loading data: {ex.Message}");
+                MessageBox.Show($"An error occurred while loading data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -142,6 +182,20 @@ namespace MyMess
             mealForm.StartPosition = FormStartPosition.CenterParent;
             mealForm.ShowDialog(); // This makes it a modal dialog
 
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            string role = RoleChecker.GetUserRole(_umail, _dbConnection);
+            if (!role.Equals("Manager"))
+            {
+                MessageBox.Show("You do not have permission to add meal.");
+                return;
+            }
+            // Navigate
+            CostsForm costsForm = new CostsForm(_messName);
+            costsForm.StartPosition = FormStartPosition.CenterParent;
+            costsForm.ShowDialog(); // This makes it a modal dialog
         }
     }
 }

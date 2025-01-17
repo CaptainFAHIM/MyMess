@@ -60,8 +60,8 @@ namespace MyMess
 
             // Query to insert into Deposites table
             string insertDepositQuery = @"
-                INSERT INTO Deposites (Name, Email, DepositeAmount, JoinedMess, DepositeDate)
-                SELECT Name, Email, @DepositAmount, @JoinedMess, GETDATE()
+                INSERT INTO Deposites (Name, Email, DepositAmount, MessName, DepositeDate)
+                SELECT Name, Email, @DepositAmount, @MessName, GETDATE()
                 FROM Users
                 WHERE Email = @MemberEmail";
 
@@ -89,7 +89,7 @@ namespace MyMess
                             using (SqlCommand insertCommand = new SqlCommand(insertDepositQuery, connection, transaction))
                             {
                                 insertCommand.Parameters.AddWithValue("@DepositAmount", depositAmount);
-                                insertCommand.Parameters.AddWithValue("@JoinedMess", _messName);
+                                insertCommand.Parameters.AddWithValue("@MessName", _messName);
                                 insertCommand.Parameters.AddWithValue("@MemberEmail", selectedMember);
 
                                 insertCommand.ExecuteNonQuery();
