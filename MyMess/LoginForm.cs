@@ -50,7 +50,7 @@ namespace MyMess
 
             try
             {
-                string query = "SELECT Role, Name, JoinedMess FROM users WHERE Email = @Email AND Password = @Password";
+                string query = "SELECT Role, Name, Email, JoinedMess FROM users WHERE Email = @Email AND Password = @Password";
 
                 using (SqlConnection connection = _dbConnection.GetConnection())
                 {
@@ -69,16 +69,17 @@ namespace MyMess
                             string role = reader["Role"].ToString().Trim();
                             string name = reader["Name"].ToString();
                             string joinedMess = reader["JoinedMess"]?.ToString();
+                            string mail = reader["Email"].ToString();
 
-                            if (role.Equals("Manager") || role.Equals("Member"))
+                            if ((role.Equals("Manager") || role.Equals("Member")) && !string.IsNullOrEmpty(joinedMess))
                             {
                                 // Role is either Manager or Member, show DashboardForm
                                 MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                DashboardForm dashboardForm = new DashboardForm(name, joinedMess);
+                                DashboardForm dashboardForm = new DashboardForm(name, joinedMess, mail);
                                 dashboardForm.Show();
                                 this.Hide();
                             }
-                            else if (string.IsNullOrEmpty(role))
+                            else if (string.IsNullOrEmpty(role) && string.IsNullOrEmpty(joinedMess))
                             {
                                 // Role is null (empty), show CreateMessForm
                                 MessageBox.Show("Login successful, Create a mess or join a mess!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);

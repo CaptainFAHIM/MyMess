@@ -121,7 +121,7 @@ namespace MyMess
                     }
 
                     // Pass the fetched data to the DashboardForm
-                    DashboardForm dashboardForm = new DashboardForm(userName, joinedMess);
+                    DashboardForm dashboardForm = new DashboardForm(userName, joinedMess, _mailForMess);
                     dashboardForm.Show();
                     this.Hide();
                 }

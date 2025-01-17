@@ -13,17 +13,19 @@ namespace MyMess
     public partial class DashboardForm : Form
     {
         private string _uname;
+        private string _umail;
         private string _messName;
         public DashboardForm()
         {
             InitializeComponent();
         }
 
-        public DashboardForm(string uname, string messName)
+        public DashboardForm(string uname, string messName, string umail)
         {
             InitializeComponent();
             _uname = uname;
-            _messName = messName.Split('_')[0];
+            _messName = messName;
+            _umail = umail;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -33,7 +35,7 @@ namespace MyMess
 
         private void Form4_Load(object sender, EventArgs e)
         {
-            messName.Text = _messName;
+            messName.Text = _messName.Split('_')[0];
             profileName.Text = _uname;
         }
 
@@ -45,6 +47,17 @@ namespace MyMess
         private void label25_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void addMemberBtn_Click(object sender, EventArgs e)
+        {
+            // Navigate to Form3
+            // Create an instance of Form2
+            AddMemberForm addMemberForm = new AddMemberForm(_umail, _messName);
+            // Set the new form's parent to the current form
+            addMemberForm.StartPosition = FormStartPosition.CenterParent;
+            // Show the new form
+            addMemberForm.ShowDialog(); // This makes it a modal dialog
         }
     }
 }

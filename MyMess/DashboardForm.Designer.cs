@@ -36,7 +36,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.addMemberBtn = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -155,16 +155,18 @@
             this.label4.Size = new System.Drawing.Size(160, 1);
             this.label4.TabIndex = 7;
             // 
-            // label5
+            // addMemberBtn
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Elephant", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(149)))), ((int)(((byte)(120)))));
-            this.label5.Location = new System.Drawing.Point(12, 148);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(146, 25);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Add Member";
+            this.addMemberBtn.AutoSize = true;
+            this.addMemberBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addMemberBtn.Font = new System.Drawing.Font("Elephant", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addMemberBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(149)))), ((int)(((byte)(120)))));
+            this.addMemberBtn.Location = new System.Drawing.Point(12, 148);
+            this.addMemberBtn.Name = "addMemberBtn";
+            this.addMemberBtn.Size = new System.Drawing.Size(146, 25);
+            this.addMemberBtn.TabIndex = 8;
+            this.addMemberBtn.Text = "Add Member";
+            this.addMemberBtn.Click += new System.EventHandler(this.addMemberBtn_Click);
             // 
             // label6
             // 
@@ -673,7 +675,7 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.addMemberBtn);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -704,7 +706,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label addMemberBtn;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
