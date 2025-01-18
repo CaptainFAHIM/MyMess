@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace MyMess
 {
@@ -23,6 +24,9 @@ namespace MyMess
             _messName = messName;
             _umail = umail;
             _dbConnection = new DbConnection();
+
+            changePassTxt.Visible = false; // Initially hidden
+            newMonthTxt.Visible = false; // Initially hidden
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -93,6 +97,57 @@ namespace MyMess
                         object costResult = command.ExecuteScalar();
                         totalCostTxt.Text = costResult != null ? costResult.ToString() : "0";
                     }
+
+                    //My info
+                    string myBalanceQuery = $@"
+                SELECT Balance
+                FROM [{_messName}]
+                WHERE Members = @Members";
+                    using (SqlCommand command = new SqlCommand(myBalanceQuery, connection))
+                    {
+                        command.Parameters.AddWithValue("@Members", _umail);
+                        object balanceResult = command.ExecuteScalar();
+                        myBalanceTxt.Text = balanceResult != null ? balanceResult.ToString() : "0";
+                    }
+
+                    //My deposit info
+                    string myDepositQuery = $@"
+                SELECT TotalDeposites
+                FROM [{_messName}]
+                WHERE Members = @Members";
+                    using (SqlCommand command = new SqlCommand(myDepositQuery, connection))
+                    {
+                        command.Parameters.AddWithValue("@Members", _umail);
+                        object depositResult = command.ExecuteScalar();
+                        myDepositeTxt.Text = depositResult != null ? depositResult.ToString() : "0"; //myDepositeTxt
+                    }
+
+
+                    //My meal count info
+                    string myMealQuery = $@"
+                SELECT TotalMeals
+                FROM [{_messName}]
+                WHERE Members = @Members";
+                    using (SqlCommand command = new SqlCommand(myMealQuery, connection))
+                    {
+                        command.Parameters.AddWithValue("@Members", _umail);
+                        object depositResult = command.ExecuteScalar();
+                        myTotalMealTxt.Text = depositResult != null ? depositResult.ToString() : "0"; //myDepositeTxt
+                    }
+
+                    //My meal total cost info
+                    string myMealCostQuery = @"
+                SELECT ISNULL(SUM(MealCost), 0)
+                FROM Meals
+                WHERE MemberEmail = @MemberEmail";
+                    using (SqlCommand command = new SqlCommand(myMealCostQuery, connection))
+                    {
+                        command.Parameters.AddWithValue("@MemberEmail", _umail);
+                        object myMealCostResult = command.ExecuteScalar();
+                        myMealCostTxt.Text = myMealCostResult != null ? myMealCostResult.ToString() : "0";
+                    }
+
+
 
                     // Fetch Active Month
                     string activeMonthQuery = $@"SELECT ActiveMonth FROM [{_messName}] WHERE ActiveMonth IS NOT NULL";
@@ -196,6 +251,34 @@ namespace MyMess
             CostsForm costsForm = new CostsForm(_messName);
             costsForm.StartPosition = FormStartPosition.CenterParent;
             costsForm.ShowDialog(); // This makes it a modal dialog
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            DashboardForm dashboardForm = new DashboardForm(_uname, _messName, _umail);
+            dashboardForm.Show();
+            this.Hide();
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+            changePassTxt.Visible = !changePassTxt.Visible;
+            newMonthTxt.Visible = !newMonthTxt.Visible;
+        }
+
+        private void newMonthTxt_Click(object sender, EventArgs e)
+        {
+            string role = RoleChecker.GetUserRole(_umail, _dbConnection);
+            if (!role.Equals("Manager"))
+            {
+                MessageBox.Show("You do not have permission to Start a new month.");
+                return;
+            }
+            // Navigate
+            ResetMonthForm resetMonthForm = new ResetMonthForm();
+            resetMonthForm.StartPosition = FormStartPosition.CenterParent;
+            resetMonthForm.ShowDialog(); // This makes it a modal dialog
+
         }
     }
 }

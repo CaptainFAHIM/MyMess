@@ -59,7 +59,6 @@ CREATE TABLE {tableName} (
     Members NVARCHAR(50),
     TotalDeposites DECIMAL(18, 2) DEFAULT 0,
     TotalMeals INT DEFAULT 0,
-    TotalCosts DECIMAL(18, 2) DEFAULT 0,
     Balance DECIMAL(18, 2) DEFAULT 0
     
 )";

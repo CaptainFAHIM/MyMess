@@ -78,6 +78,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.dayCount = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
+            this.changePassTxt = new System.Windows.Forms.Label();
+            this.newMonthTxt = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -105,6 +107,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label3.Font = new System.Drawing.Font("Elephant", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(149)))), ((int)(((byte)(120)))));
             this.label3.Location = new System.Drawing.Point(12, 97);
@@ -112,6 +115,7 @@
             this.label3.Size = new System.Drawing.Size(74, 25);
             this.label3.TabIndex = 6;
             this.label3.Text = "Home";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // pictureBox3
             // 
@@ -172,14 +176,15 @@
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(149)))), ((int)(((byte)(120)))));
             this.label6.Location = new System.Drawing.Point(12, 202);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(151, 25);
+            this.label6.Size = new System.Drawing.Size(140, 25);
             this.label6.TabIndex = 9;
-            this.label6.Text = "Add Deposite";
+            this.label6.Text = "Add Deposit";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label7.Font = new System.Drawing.Font("Elephant", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(149)))), ((int)(((byte)(120)))));
             this.label7.Location = new System.Drawing.Point(12, 256);
@@ -192,6 +197,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label8.Font = new System.Drawing.Font("Elephant", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(149)))), ((int)(((byte)(120)))));
             this.label8.Location = new System.Drawing.Point(12, 312);
@@ -204,6 +210,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label9.Font = new System.Drawing.Font("Elephant", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(149)))), ((int)(((byte)(120)))));
             this.label9.Location = new System.Drawing.Point(12, 365);
@@ -215,6 +222,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label10.Font = new System.Drawing.Font("Elephant", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(149)))), ((int)(((byte)(120)))));
             this.label10.Location = new System.Drawing.Point(12, 419);
@@ -226,6 +234,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
+            this.label11.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label11.Font = new System.Drawing.Font("Elephant", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(149)))), ((int)(((byte)(120)))));
             this.label11.Location = new System.Drawing.Point(12, 469);
@@ -233,6 +242,7 @@
             this.label11.Size = new System.Drawing.Size(94, 25);
             this.label11.TabIndex = 14;
             this.label11.Text = "Options";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label12
             // 
@@ -482,9 +492,9 @@
             this.label40.ForeColor = System.Drawing.Color.DimGray;
             this.label40.Location = new System.Drawing.Point(673, 202);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(113, 20);
+            this.label40.Size = new System.Drawing.Size(104, 20);
             this.label40.TabIndex = 43;
-            this.label40.Text = "Total deposite:";
+            this.label40.Text = "Total deposit:";
             // 
             // myMealCostTxt
             // 
@@ -581,12 +591,39 @@
             this.label32.TabIndex = 35;
             this.label32.Text = "Total cost:";
             // 
+            // changePassTxt
+            // 
+            this.changePassTxt.AutoSize = true;
+            this.changePassTxt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.changePassTxt.Font = new System.Drawing.Font("Elephant", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.changePassTxt.ForeColor = System.Drawing.Color.Red;
+            this.changePassTxt.Location = new System.Drawing.Point(13, 510);
+            this.changePassTxt.Name = "changePassTxt";
+            this.changePassTxt.Size = new System.Drawing.Size(140, 20);
+            this.changePassTxt.TabIndex = 57;
+            this.changePassTxt.Text = "Change password";
+            // 
+            // newMonthTxt
+            // 
+            this.newMonthTxt.AutoSize = true;
+            this.newMonthTxt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.newMonthTxt.Font = new System.Drawing.Font("Elephant", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newMonthTxt.ForeColor = System.Drawing.Color.Red;
+            this.newMonthTxt.Location = new System.Drawing.Point(13, 541);
+            this.newMonthTxt.Name = "newMonthTxt";
+            this.newMonthTxt.Size = new System.Drawing.Size(97, 20);
+            this.newMonthTxt.TabIndex = 58;
+            this.newMonthTxt.Text = "New Month";
+            this.newMonthTxt.Click += new System.EventHandler(this.newMonthTxt_Click);
+            // 
             // DashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.Controls.Add(this.newMonthTxt);
+            this.Controls.Add(this.changePassTxt);
             this.Controls.Add(this.dayCount);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.activeMonthLabel);
@@ -701,5 +738,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label dayCount;
         private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label changePassTxt;
+        private System.Windows.Forms.Label newMonthTxt;
     }
 }
