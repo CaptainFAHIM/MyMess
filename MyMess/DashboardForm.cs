@@ -290,5 +290,13 @@ namespace MyMess
             allMembersForm.ShowDialog(); // This makes it a modal dialog
 
         }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            // Navigate
+            MonthDetailsForm monthDetailsForm = new MonthDetailsForm(_messName);
+            monthDetailsForm.StartPosition = FormStartPosition.CenterParent;
+            monthDetailsForm.ShowDialog(); // This makes it a modal dialog
+        }
     }
 }

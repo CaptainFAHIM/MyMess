@@ -32,9 +32,6 @@
             this.profileName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.addMemberBtn = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -80,6 +77,10 @@
             this.label32 = new System.Windows.Forms.Label();
             this.changePassTxt = new System.Windows.Forms.Label();
             this.newMonthTxt = new System.Windows.Forms.Label();
+            this.lgOutBtn = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -116,36 +117,6 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Home";
             this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::MyMess.Properties.Resources.profile1;
-            this.pictureBox3.Location = new System.Drawing.Point(1108, 12);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(64, 44);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::MyMess.Properties.Resources.logo1;
-            this.pictureBox2.Location = new System.Drawing.Point(-4, -4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(64, 60);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::MyMess.Properties.Resources.home11;
-            this.pictureBox1.Location = new System.Drawing.Point(576, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(47, 44);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // label4
             // 
@@ -218,6 +189,7 @@
             this.label9.Size = new System.Drawing.Size(162, 25);
             this.label9.TabIndex = 12;
             this.label9.Text = "Month Details";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label10
             // 
@@ -617,12 +589,55 @@
             this.newMonthTxt.Text = "New Month";
             this.newMonthTxt.Click += new System.EventHandler(this.newMonthTxt_Click);
             // 
+            // lgOutBtn
+            // 
+            this.lgOutBtn.AutoSize = true;
+            this.lgOutBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lgOutBtn.Font = new System.Drawing.Font("Elephant", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lgOutBtn.ForeColor = System.Drawing.Color.Red;
+            this.lgOutBtn.Location = new System.Drawing.Point(1104, 621);
+            this.lgOutBtn.Name = "lgOutBtn";
+            this.lgOutBtn.Size = new System.Drawing.Size(67, 20);
+            this.lgOutBtn.TabIndex = 59;
+            this.lgOutBtn.Text = "Log out";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::MyMess.Properties.Resources.profile1;
+            this.pictureBox3.Location = new System.Drawing.Point(1108, 12);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(64, 44);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::MyMess.Properties.Resources.logo1;
+            this.pictureBox2.Location = new System.Drawing.Point(-4, -4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(64, 60);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::MyMess.Properties.Resources.home11;
+            this.pictureBox1.Location = new System.Drawing.Point(576, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(47, 44);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // DashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.Controls.Add(this.lgOutBtn);
             this.Controls.Add(this.newMonthTxt);
             this.Controls.Add(this.changePassTxt);
             this.Controls.Add(this.dayCount);
@@ -741,5 +756,6 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label changePassTxt;
         private System.Windows.Forms.Label newMonthTxt;
+        private System.Windows.Forms.Label lgOutBtn;
     }
 }
