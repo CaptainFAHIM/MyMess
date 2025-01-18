@@ -52,6 +52,12 @@
     <Compile Include="AddMemberForm.Designer.cs">
       <DependentUpon>AddMemberForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AllMembersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllMembersForm.Designer.cs">
+      <DependentUpon>AllMembersForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CostsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,6 +65,12 @@
       <DependentUpon>CostsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DbConnection.cs" />
+    <Compile Include="DeleteMemberForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteMemberForm.Designer.cs">
+      <DependentUpon>DeleteMemberForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DepositeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,11 +116,23 @@
       <DependentUpon>ResetMonthForm.cs</DependentUpon>
     </Compile>
     <Compile Include="RoleChecker.cs" />
+    <Compile Include="UpdateRoleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateRoleForm.Designer.cs">
+      <DependentUpon>UpdateRoleForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddMemberForm.resx">
       <DependentUpon>AddMemberForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AllMembersForm.resx">
+      <DependentUpon>AllMembersForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CostsForm.resx">
       <DependentUpon>CostsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteMemberForm.resx">
+      <DependentUpon>DeleteMemberForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DepositeForm.resx">
       <DependentUpon>DepositeForm.cs</DependentUpon>
@@ -140,6 +164,9 @@
     </Compile>
     <EmbeddedResource Include="ResetMonthForm.resx">
       <DependentUpon>ResetMonthForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateRoleForm.resx">
+      <DependentUpon>UpdateRoleForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

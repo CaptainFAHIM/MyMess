@@ -230,6 +230,7 @@
             this.label10.Size = new System.Drawing.Size(144, 25);
             this.label10.TabIndex = 13;
             this.label10.Text = "All Members";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label11
             // 

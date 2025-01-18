@@ -275,9 +275,19 @@ namespace MyMess
                 return;
             }
             // Navigate
-            ResetMonthForm resetMonthForm = new ResetMonthForm();
+            ResetMonthForm resetMonthForm = new ResetMonthForm(_messName);
             resetMonthForm.StartPosition = FormStartPosition.CenterParent;
             resetMonthForm.ShowDialog(); // This makes it a modal dialog
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+            // Navigate
+            AllMembersForm allMembersForm = new AllMembersForm(_messName, _umail);
+            allMembersForm.StartPosition = FormStartPosition.CenterParent;
+            allMembersForm.ShowDialog(); // This makes it a modal dialog
 
         }
     }
