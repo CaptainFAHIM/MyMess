@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateRoleForm));
             this.roleEmailTxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.managerRadio = new System.Windows.Forms.RadioButton();
@@ -101,8 +102,11 @@
             this.Controls.Add(this.managerRadio);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.roleEmailTxt);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "UpdateRoleForm";
-            this.Text = "UpdateRoleForm";
+            this.Text = "Update Role";
             this.Load += new System.EventHandler(this.UpdateRoleForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

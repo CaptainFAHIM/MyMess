@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MonthDetailsForm));
             this.dgvDeposits = new System.Windows.Forms.DataGridView();
             this.profileName = new System.Windows.Forms.Label();
             this.dgvMeals = new System.Windows.Forms.DataGridView();
@@ -120,8 +121,11 @@
             this.Controls.Add(this.dgvMeals);
             this.Controls.Add(this.profileName);
             this.Controls.Add(this.dgvDeposits);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "MonthDetailsForm";
-            this.Text = "MonthDetailsForm";
+            this.Text = "Month Details";
             this.Load += new System.EventHandler(this.MonthDetailsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeposits)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMeals)).EndInit();

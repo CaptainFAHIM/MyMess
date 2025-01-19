@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeleteMemberForm));
             this.label1 = new System.Windows.Forms.Label();
             this.deleteMemberTxt = new System.Windows.Forms.TextBox();
             this.deleteMemberBtn = new System.Windows.Forms.Button();
@@ -75,8 +76,11 @@
             this.Controls.Add(this.deleteMemberBtn);
             this.Controls.Add(this.deleteMemberTxt);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "DeleteMemberForm";
-            this.Text = "DeleteMumberForm";
+            this.Text = "Delete Member";
             this.ResumeLayout(false);
             this.PerformLayout();
 

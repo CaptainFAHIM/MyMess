@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ToLetForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.contactTxt = new System.Windows.Forms.TextBox();
+            this.locationTxt = new System.Windows.Forms.RichTextBox();
+            this.femaleRadioBtn = new System.Windows.Forms.RadioButton();
+            this.maleRadioBtn = new System.Windows.Forms.RadioButton();
+            this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.seatTxt = new System.Windows.Forms.TextBox();
             this.saveBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.locationTxt = new System.Windows.Forms.RichTextBox();
-            this.maleRadioBtn = new System.Windows.Forms.RadioButton();
-            this.femaleRadioBtn = new System.Windows.Forms.RadioButton();
-            this.contactTxt = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,6 +62,68 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(352, 472);
             this.panel1.TabIndex = 6;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Bell MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(23, 162);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(71, 22);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "Contact";
+            // 
+            // contactTxt
+            // 
+            this.contactTxt.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.contactTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contactTxt.Location = new System.Drawing.Point(27, 187);
+            this.contactTxt.Multiline = true;
+            this.contactTxt.Name = "contactTxt";
+            this.contactTxt.Size = new System.Drawing.Size(298, 40);
+            this.contactTxt.TabIndex = 19;
+            // 
+            // locationTxt
+            // 
+            this.locationTxt.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.locationTxt.Location = new System.Drawing.Point(27, 300);
+            this.locationTxt.Name = "locationTxt";
+            this.locationTxt.Size = new System.Drawing.Size(298, 96);
+            this.locationTxt.TabIndex = 7;
+            this.locationTxt.Text = "";
+            this.locationTxt.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            // 
+            // femaleRadioBtn
+            // 
+            this.femaleRadioBtn.AutoSize = true;
+            this.femaleRadioBtn.Location = new System.Drawing.Point(81, 255);
+            this.femaleRadioBtn.Name = "femaleRadioBtn";
+            this.femaleRadioBtn.Size = new System.Drawing.Size(59, 17);
+            this.femaleRadioBtn.TabIndex = 18;
+            this.femaleRadioBtn.TabStop = true;
+            this.femaleRadioBtn.Text = "Female";
+            this.femaleRadioBtn.UseVisualStyleBackColor = true;
+            // 
+            // maleRadioBtn
+            // 
+            this.maleRadioBtn.AutoSize = true;
+            this.maleRadioBtn.Location = new System.Drawing.Point(27, 255);
+            this.maleRadioBtn.Name = "maleRadioBtn";
+            this.maleRadioBtn.Size = new System.Drawing.Size(48, 17);
+            this.maleRadioBtn.TabIndex = 17;
+            this.maleRadioBtn.TabStop = true;
+            this.maleRadioBtn.Text = "Male";
+            this.maleRadioBtn.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Bell MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(23, 275);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(78, 22);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Location";
             // 
             // label2
             // 
@@ -115,68 +178,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "TO-LET";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Bell MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(23, 275);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 22);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "Location";
-            // 
-            // locationTxt
-            // 
-            this.locationTxt.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.locationTxt.Location = new System.Drawing.Point(27, 300);
-            this.locationTxt.Name = "locationTxt";
-            this.locationTxt.Size = new System.Drawing.Size(298, 96);
-            this.locationTxt.TabIndex = 7;
-            this.locationTxt.Text = "";
-            this.locationTxt.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
-            // 
-            // maleRadioBtn
-            // 
-            this.maleRadioBtn.AutoSize = true;
-            this.maleRadioBtn.Location = new System.Drawing.Point(27, 255);
-            this.maleRadioBtn.Name = "maleRadioBtn";
-            this.maleRadioBtn.Size = new System.Drawing.Size(48, 17);
-            this.maleRadioBtn.TabIndex = 17;
-            this.maleRadioBtn.TabStop = true;
-            this.maleRadioBtn.Text = "Male";
-            this.maleRadioBtn.UseVisualStyleBackColor = true;
-            // 
-            // femaleRadioBtn
-            // 
-            this.femaleRadioBtn.AutoSize = true;
-            this.femaleRadioBtn.Location = new System.Drawing.Point(81, 255);
-            this.femaleRadioBtn.Name = "femaleRadioBtn";
-            this.femaleRadioBtn.Size = new System.Drawing.Size(59, 17);
-            this.femaleRadioBtn.TabIndex = 18;
-            this.femaleRadioBtn.TabStop = true;
-            this.femaleRadioBtn.Text = "Female";
-            this.femaleRadioBtn.UseVisualStyleBackColor = true;
-            // 
-            // contactTxt
-            // 
-            this.contactTxt.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.contactTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contactTxt.Location = new System.Drawing.Point(27, 187);
-            this.contactTxt.Multiline = true;
-            this.contactTxt.Name = "contactTxt";
-            this.contactTxt.Size = new System.Drawing.Size(298, 40);
-            this.contactTxt.TabIndex = 19;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Bell MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(23, 162);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 22);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "Contact";
-            // 
             // ToLetForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -184,8 +185,11 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(149)))), ((int)(((byte)(120)))));
             this.ClientSize = new System.Drawing.Size(584, 548);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "ToLetForm";
-            this.Text = "ToLetForm";
+            this.Text = "To-Let";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

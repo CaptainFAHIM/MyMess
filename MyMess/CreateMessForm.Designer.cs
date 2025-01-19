@@ -121,7 +121,6 @@
             this.activeMonth.Location = new System.Drawing.Point(27, 196);
             this.activeMonth.Multiline = true;
             this.activeMonth.Name = "activeMonth";
-            this.activeMonth.PasswordChar = '*';
             this.activeMonth.Size = new System.Drawing.Size(298, 40);
             this.activeMonth.TabIndex = 3;
             this.activeMonth.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
@@ -168,11 +167,12 @@
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.lgOutBtn);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimizeBox = false;
+            this.MaximizeBox = false;
             this.Name = "CreateMessForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MyMess";
+            this.Text = "Create Mess";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

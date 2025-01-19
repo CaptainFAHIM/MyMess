@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DepositeForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.selectUserCombo = new System.Windows.Forms.ComboBox();
             this.addAmmountBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.depositeAmmountTxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.selectUserCombo = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,6 +51,15 @@
             this.panel1.Size = new System.Drawing.Size(352, 358);
             this.panel1.TabIndex = 4;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // selectUserCombo
+            // 
+            this.selectUserCombo.FormattingEnabled = true;
+            this.selectUserCombo.Location = new System.Drawing.Point(27, 110);
+            this.selectUserCombo.Name = "selectUserCombo";
+            this.selectUserCombo.Size = new System.Drawing.Size(298, 21);
+            this.selectUserCombo.TabIndex = 13;
+            this.selectUserCombo.SelectedIndexChanged += new System.EventHandler(this.selectUserCombo_SelectedIndexChanged);
             // 
             // addAmmountBtn
             // 
@@ -94,15 +104,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Deposite";
             // 
-            // selectUserCombo
-            // 
-            this.selectUserCombo.FormattingEnabled = true;
-            this.selectUserCombo.Location = new System.Drawing.Point(27, 110);
-            this.selectUserCombo.Name = "selectUserCombo";
-            this.selectUserCombo.Size = new System.Drawing.Size(298, 21);
-            this.selectUserCombo.TabIndex = 13;
-            this.selectUserCombo.SelectedIndexChanged += new System.EventHandler(this.selectUserCombo_SelectedIndexChanged);
-            // 
             // DepositeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -110,9 +111,11 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(149)))), ((int)(((byte)(120)))));
             this.ClientSize = new System.Drawing.Size(584, 411);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "DepositeForm";
-            this.Text = "DepositeForm";
+            this.Text = "Add Deposit";
             this.Load += new System.EventHandler(this.DepositeForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
