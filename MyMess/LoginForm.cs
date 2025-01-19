@@ -101,5 +101,9 @@ namespace MyMess
             }
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Please contact the admin for password reset. (An automated password reset functionality will be provided later.)", "Password Reset", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

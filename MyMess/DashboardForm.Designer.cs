@@ -81,6 +81,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -558,11 +559,11 @@
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label32.ForeColor = System.Drawing.Color.DimGray;
-            this.label32.Location = new System.Drawing.Point(242, 276);
+            this.label32.Location = new System.Drawing.Point(238, 276);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(82, 20);
+            this.label32.Size = new System.Drawing.Size(123, 20);
             this.label32.TabIndex = 35;
-            this.label32.Text = "Total cost:";
+            this.label32.Text = "Total other cost:";
             // 
             // changePassTxt
             // 
@@ -575,6 +576,7 @@
             this.changePassTxt.Size = new System.Drawing.Size(140, 20);
             this.changePassTxt.TabIndex = 57;
             this.changePassTxt.Text = "Change password";
+            this.changePassTxt.Click += new System.EventHandler(this.changePassTxt_Click);
             // 
             // newMonthTxt
             // 
@@ -600,6 +602,7 @@
             this.lgOutBtn.Size = new System.Drawing.Size(67, 20);
             this.lgOutBtn.TabIndex = 59;
             this.lgOutBtn.Text = "Log out";
+            this.lgOutBtn.Click += new System.EventHandler(this.lgOutBtn_Click);
             // 
             // pictureBox3
             // 
@@ -631,12 +634,26 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label1.Font = new System.Drawing.Font("Elephant", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(149)))), ((int)(((byte)(120)))));
+            this.label1.Location = new System.Drawing.Point(12, 621);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(184, 20);
+            this.label1.TabIndex = 60;
+            this.label1.Text = "Need member in mess?";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            // 
             // DashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lgOutBtn);
             this.Controls.Add(this.newMonthTxt);
             this.Controls.Add(this.changePassTxt);
@@ -757,5 +774,6 @@
         private System.Windows.Forms.Label changePassTxt;
         private System.Windows.Forms.Label newMonthTxt;
         private System.Windows.Forms.Label lgOutBtn;
+        private System.Windows.Forms.Label label1;
     }
 }

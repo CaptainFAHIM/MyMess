@@ -144,5 +144,22 @@ WHERE email = @Email";
         {
 
         }
+
+        private void lgOutBtn_Click(object sender, EventArgs e)
+        {
+            // Create an instance of Form2
+            LoginForm loginForm = new LoginForm();
+
+            // Show Form2
+            loginForm.Show();
+            //hide form 1
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Please give your email to a mess manager to add you.");
+            return;
+        }
     }
 }

@@ -143,39 +143,57 @@ namespace MyMess
         //Download
         private void mnthDetailsDwnBtn_Click(object sender, EventArgs e)
         {
-            string pdfPath = $"{_messName}_Month_Details.pdf";
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Filter = "PDF files (*.pdf)|*.pdf";
+                saveFileDialog.Title = "Save Month Details as PDF";
+                saveFileDialog.FileName = $"{_messName}_Month_Details.pdf";
 
-            // Create a new PDF document
-            PdfDocument document = new PdfDocument();
-            document.Info.Title = $"{_messName} Month Details";
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string pdfPath = saveFileDialog.FileName;
 
-            // Create an empty page
-            PdfPage page = document.AddPage();
-            XGraphics gfx = XGraphics.FromPdfPage(page);
-            XFont font = new XFont("Verdana", 8, XFontStyle.Regular);  // Smaller font size
-            double yPosition = 20;
+                    try
+                    {
+                        // Create a new PDF document
+                        PdfDocument document = new PdfDocument();
+                        document.Info.Title = $"{_messName} Month Details";
 
-            // Write the title at the very top of the PDF
-            gfx.DrawString($"Mess Details for: {_messName.Split('_')[0]}", new XFont("Verdana", 16, XFontStyle.Bold), XBrushes.Black, new XRect(0, yPosition, page.Width, page.Height), XStringFormats.Center);
-            yPosition += 30; // Add some space below the title
+                        // Create an empty page
+                        PdfPage page = document.AddPage();
+                        XGraphics gfx = XGraphics.FromPdfPage(page);
+                        XFont font = new XFont("Verdana", 8, XFontStyle.Regular);  // Smaller font size
+                        double yPosition = 20;
 
-            // Write Deposits Table
-            yPosition = WriteTable(gfx, "Deposits", dgvDeposits, font, yPosition);
+                        // Write the title at the very top of the PDF
+                        gfx.DrawString($"Mess Details for: {_messName.Split('_')[0]}", new XFont("Verdana", 16, XFontStyle.Bold), XBrushes.Black, new XRect(0, yPosition, page.Width, page.Height), XStringFormats.Center);
+                        yPosition += 30; // Add some space below the title
 
-            // Write Costs Table
-            yPosition = WriteTable(gfx, "Costs", dgvCosts, font, yPosition);
+                        // Write Deposits Table
+                        yPosition = WriteTable(gfx, "Deposits", dgvDeposits, font, yPosition);
 
-            // Write Meals Table
-            yPosition = WriteTable(gfx, "Meals", dgvMeals, font, yPosition);
+                        // Write Costs Table
+                        yPosition = WriteTable(gfx, "Costs", dgvCosts, font, yPosition);
 
-            // Save the document to a file
-            document.Save(pdfPath);
+                        // Write Meals Table
+                        yPosition = WriteTable(gfx, "Meals", dgvMeals, font, yPosition);
 
-            // Optionally, open the PDF after creating it
-            System.Diagnostics.Process.Start(pdfPath);
+                        // Save the document to the specified file path
+                        document.Save(pdfPath);
 
-            MessageBox.Show("PDF saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        // Optionally, open the PDF after creating it
+                        System.Diagnostics.Process.Start(pdfPath);
+
+                        MessageBox.Show("PDF saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error saving PDF: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
+
 
         private double WriteTable(XGraphics gfx, string tableName, DataGridView dgv, XFont font, double yPosition)
         {

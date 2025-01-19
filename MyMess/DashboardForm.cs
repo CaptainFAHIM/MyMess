@@ -298,5 +298,38 @@ namespace MyMess
             monthDetailsForm.StartPosition = FormStartPosition.CenterParent;
             monthDetailsForm.ShowDialog(); // This makes it a modal dialog
         }
+
+        private void lgOutBtn_Click(object sender, EventArgs e)
+        {
+            // Create an instance of Form2
+            LoginForm loginForm = new LoginForm();
+
+            // Show Form2
+            loginForm.Show();
+            //hide form 1
+            this.Close();
+        }
+
+        private void changePassTxt_Click(object sender, EventArgs e)
+        {
+            // Navigate
+            PasswordChangeForm passwordChangeForm = new PasswordChangeForm(_umail);
+            passwordChangeForm.StartPosition = FormStartPosition.CenterParent;
+            passwordChangeForm.ShowDialog(); // This makes it a modal dialog
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+            string role = RoleChecker.GetUserRole(_umail, _dbConnection);
+            if (!role.Equals("Manager"))
+            {
+                MessageBox.Show("You do not have permission to add a member.");
+                return;
+            }
+            // Navigate
+            ToLetForm toLetForm = new ToLetForm(_messName);
+            toLetForm.StartPosition = FormStartPosition.CenterParent;
+            toLetForm.ShowDialog(); // This makes it a modal dialog
+        }
     }
 }

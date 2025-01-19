@@ -29,10 +29,10 @@ namespace MyMess
         private void label7_Click(object sender, EventArgs e)
         {
             // Create an instance of Form2
-            LoginForm form2 = new LoginForm();
+            LoginForm loginForm = new LoginForm();
 
             // Show Form2
-            form2.Show();
+            loginForm.Show();
             //hide form 1
             this.Hide();
         }

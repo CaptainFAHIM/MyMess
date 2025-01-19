@@ -38,6 +38,7 @@
             this.activeMonth = new System.Windows.Forms.TextBox();
             this.messName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.lgOutBtn = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,6 +69,7 @@
             this.button1.TabIndex = 12;
             this.button1.Text = "Join Mess";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label6
             // 
@@ -145,12 +147,26 @@
             this.label1.Text = "Create Your Mess";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // lgOutBtn
+            // 
+            this.lgOutBtn.AutoSize = true;
+            this.lgOutBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lgOutBtn.Font = new System.Drawing.Font("Elephant", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lgOutBtn.ForeColor = System.Drawing.Color.Red;
+            this.lgOutBtn.Location = new System.Drawing.Point(705, 532);
+            this.lgOutBtn.Name = "lgOutBtn";
+            this.lgOutBtn.Size = new System.Drawing.Size(67, 20);
+            this.lgOutBtn.TabIndex = 60;
+            this.lgOutBtn.Text = "Log out";
+            this.lgOutBtn.Click += new System.EventHandler(this.lgOutBtn_Click);
+            // 
             // CreateMessForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(149)))), ((int)(((byte)(120)))));
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.lgOutBtn);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimizeBox = false;
@@ -160,6 +176,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -174,5 +191,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lgOutBtn;
     }
 }

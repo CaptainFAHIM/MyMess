@@ -35,14 +35,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
-      <HintPath>..\packages\Portable.BouncyCastle.1.8.5\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
-    <Reference Include="Common.Logging, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
-      <HintPath>..\packages\Common.Logging.3.4.1\lib\net40\Common.Logging.dll</HintPath>
-    </Reference>
-    <Reference Include="Common.Logging.Core, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
-      <HintPath>..\packages\Common.Logging.Core.3.4.1\lib\net40\Common.Logging.Core.dll</HintPath>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
@@ -153,6 +150,12 @@
     <Compile Include="MonthDetailsForm.Designer.cs">
       <DependentUpon>MonthDetailsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PasswordChangeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PasswordChangeForm.Designer.cs">
+      <DependentUpon>PasswordChangeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +189,12 @@
       <DependentUpon>ResetMonthForm.cs</DependentUpon>
     </Compile>
     <Compile Include="RoleChecker.cs" />
+    <Compile Include="ToLetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToLetForm.Designer.cs">
+      <DependentUpon>ToLetForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UpdateRoleForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,6 +222,9 @@
     <EmbeddedResource Include="MonthDetailsForm.resx">
       <DependentUpon>MonthDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PasswordChangeForm.resx">
+      <DependentUpon>PasswordChangeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RegForm.resx">
       <DependentUpon>RegForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -237,6 +249,9 @@
     </Compile>
     <EmbeddedResource Include="ResetMonthForm.resx">
       <DependentUpon>ResetMonthForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToLetForm.resx">
+      <DependentUpon>ToLetForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateRoleForm.resx">
       <DependentUpon>UpdateRoleForm.cs</DependentUpon>
